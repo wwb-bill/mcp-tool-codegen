@@ -1,0 +1,4 @@
+import type{McpTool,GeneratedFile}from"./types.js";
+function toInterface(props:Record<string,unknown>|undefined):string{if(!props||typeof props!=="object")return"  // no properties";const lines:string[]=[];for(const[k,v]of Object.entries(props)){const t=(v as any).type??"unknown";const desc=(v as any).description??"";lines.push(`  ${k}: ${t};${desc?" // "+desc:""}`);}return lines.join("\n");}
+export function generateTypes(tools:McpTool[]):GeneratedFile[]{const files:GeneratedFile[]=[];files.push({filename:"tools.types.ts",content:`// Auto-generated MCP tool types\n\n${tools.map(t=>`/** Tool: ${t.name}${t.description?" - "+t.description:""} */\nexport interface ${pascalCase(t.name)}Params {\n${toInterface((t.inputSchema as any)?.properties)}\n}`).join("\n\n")}`});return files;}
+function pascalCase(s:string):string{return s.split(/[-_\s]+/).map(w=>w.charAt(0).toUpperCase()+w.slice(1)).join("");}
