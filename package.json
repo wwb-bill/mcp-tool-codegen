@@ -1,1 +1,33 @@
-{"name":"mcp-tool-codegen","version":"0.1.0","description":"Generate typed TypeScript APIs from MCP tool schemas.","author":"wwb-bill","license":"MIT","type":"module","main":"dist/index.js","bin":{"mcp-codegen":"dist/cli.js"},"scripts":{"build":"tsc","test":"vitest run","lint":"tsc --noEmit"},"engines":{"node":">=18"},"devDependencies":{"@types/node":"^22.0.0","tsx":"^4.19.0","typescript":"^5.6.0","vitest":"^2.1.0"}}
+{
+  "name": "mcp-tool-codegen",
+  "version": "0.1.1",
+  "description": "Generate typed TypeScript APIs from MCP tool schemas — Zod types, inline docs.",
+  "author": "wwb-bill",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-codegen": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "mcp",
+    "codegen",
+    "typescript",
+    "zod",
+    "cli"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
